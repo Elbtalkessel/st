@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "mono:pixelsize=12:antialias=true:autohint=true";
-static char *font2[] = { "JoyPixels:pixelsize=10:antialias=true:autohint=true" };
-static int borderpx = 2;
+static char *font = "mono:pixelsize=15:antialias=true:autohint=true";
+static char *font2[] = { "Font awesome 5 free regula:style=regular:pixelsize=10:antialias=true:autohint=true" };
+static int borderpx = 5;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -152,7 +152,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -254,23 +254,17 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
-	{ MODKEY,               XK_c,           clipcopy,       {.i =  0} },
+	{ ControlMask,          XK_c,           clipcopy,       {.i =  0} },
+	{ ControlMask,          XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      clippaste,      {.i =  0} },
-	{ MODKEY,               XK_v,           clippaste,      {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
-	{ MODKEY,               XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ MODKEY,               XK_Page_Down,   kscrolldown,    {.i = -1} },
 	{ MODKEY,               XK_k,           kscrollup,      {.i =  1} },
 	{ MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
-	{ MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
-	{ MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
 	{ MODKEY,               XK_u,           kscrollup,      {.i = -1} },
 	{ MODKEY,               XK_d,           kscrolldown,    {.i = -1} },
-	{ MODKEY,		XK_s,		changealpha,	{.f = -0.05} },
-	{ MODKEY,		XK_a,		changealpha,	{.f = +0.05} },
+	{ MODKEY,								XK_s,						changealpha,	{.f = -0.05} },
+	{ MODKEY,								XK_a,						changealpha,	{.f = +0.05} },
 	{ TERMMOD,              XK_Up,          zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_K,           zoom,           {.f = +1} },
